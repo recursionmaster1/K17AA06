@@ -25,10 +25,10 @@ struct Queue
 
 void enqueue(struct Proc *p)
 {
-	if(ReadyQueue->rear==NULL)
+	if(ReadyQueue->front==NULL)
 	{
-		ReadyQueue->rear=p;
 		ReadyQueue->front=p;
+		ReadyQueue->rear=p;
 		p->next=NULL;
 	}
         
