@@ -6,7 +6,7 @@
 #define RUNNING 3
 #define EXIT 4
 
-int currenttime=3,runningtime=0,ALLEXIT=0,TimeQuantum,CT=1,n;
+int currenttime=3,runningtime=0,ALLEXIT=0,TimeQuantum,CT=1,n,i,j;
 struct Proc 
 {
 	int pid;
@@ -100,7 +100,7 @@ struct Proc *  deQueue()
 void checkqueue()
 {
 int count=0;
-           for(int i=0;i<n;i++)
+           for( i=0;i<n;i++)
 	   {
                    
 		   if(pa[i].state == NEW && currenttime>=pa[i].at)
@@ -131,7 +131,7 @@ ReadyQueue =(struct Queue*) malloc(sizeof(struct Queue));
 	printf("\n Please Enter Time qunatum");
 	scanf("%d",&TimeQuantum);
 	pa=(struct Proc *)malloc(sizeof(struct Proc)*n);
-	for(int i=0;i<n;i++)
+	for(i=0;i<n;i++)
 	{
              printf("\n\n Enter Process Id For %d Process",(i+1));
 	     scanf("%d",&(pa[i].pid));
@@ -145,7 +145,7 @@ ReadyQueue =(struct Queue*) malloc(sizeof(struct Queue));
 	        
 	}
  struct Proc key; 
-    int i,j;
+    
     for (i = 1; i < n; i++) { 
         key = pa[i]; 
         j = i - 1; 
@@ -231,7 +231,7 @@ currenttime++;
 }
 }
 int sumwt=0,sumtat=0;
-for(int i=0;i<n;i++)
+for(i=0;i<n;i++)
 	{
            printf("\n\nprocess pid=%d\nct=%d\ntat=%d\nwt=%d",pa[i].pid,pa[i].ct,pa[i].tat,pa[i].wt);
            sumwt+=pa[i].wt;
